@@ -8,18 +8,18 @@
 <meta name="keywords" content="Yagnesh Hadiya, MERN Stack Developer, Senior React.js Developer, Senior Next.js Developer, Full Stack JavaScript Developer, React Developer, Node.js Developer, MongoDB, Express.js, TypeScript, Redux, GraphQL, AWS, Remote, Hybrid">
 <meta name="author" content="Yagnesh Hadiya">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://yagnesh-hadiya.github.io/">
+<link rel="canonical" href="https://yagnesh-hadiya.github.io/yagnesh-resume-site/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Yagnesh Hadiya – Senior MERN Stack Developer">
 <meta property="og:description" content="Senior MERN Stack and React.js / Next.js Developer with 5+ years of experience. Open to office, remote and hybrid roles.">
-<meta property="og:url" content="https://yagnesh-hadiya.github.io/">
-<meta property="og:image" content="https://yagnesh-hadiya.github.io/og-image.png">
+<meta property="og:url" content="https://yagnesh-hadiya.github.io/yagnesh-resume-site/">
+<meta property="og:image" content="https://yagnesh-hadiya.github.io/yagnesh-resume-site/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Yagnesh Hadiya – Senior MERN Stack Developer">
 <meta name="twitter:description" content="Senior MERN Stack and React.js / Next.js Developer with 5+ years of experience.">
-<meta name="twitter:image" content="https://yagnesh-hadiya.github.io/og-image.png">
+<meta name="twitter:image" content="https://yagnesh-hadiya.github.io/yagnesh-resume-site/og-image.png">
 <meta name="theme-color" content="#F4F6F9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1622" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232349D6'/%3E%3Ctext x='32' y='42' font-family='Arial,Helvetica,sans-serif' font-size='27' font-weight='700' fill='white' text-anchor='middle'%3EYH%3C/text%3E%3C/svg%3E">
@@ -32,7 +32,7 @@
   "@type": "Person",
   "name": "Yagnesh Hadiya",
   "jobTitle": "Senior MERN Stack Developer",
-  "url": "https://yagnesh-hadiya.github.io/",
+  "url": "https://yagnesh-hadiya.github.io/yagnesh-resume-site/",
   "email": "mailto:yagnesh.tech1@gmail.com",
   "worksFor": { "@type": "Organization", "name": "Bytes Technolab" },
   "alumniOf": [
@@ -403,10 +403,88 @@ footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted)
 .to-top:hover { background: var(--accent-hover); transform: translateY(-3px); }
 .to-top svg { width: 20px; height: 20px; }
 
+/* ---------- Mobile menu ---------- */
+.label-short { display: none; }
+.menu-toggle { display: none; }
+.mobile-menu { display: none; }
+@media (max-width: 760px) {
+  .header-inner { gap: 12px; }
+  .label-long { display: none; }
+  .label-short { display: inline; }
+  .menu-toggle {
+    display: inline-grid; place-content: center; gap: 5px;
+    width: 44px; height: 44px; padding: 0; margin-right: -6px;
+    border: 0; border-radius: 12px; background: transparent; color: var(--ink); cursor: pointer;
+  }
+  .menu-toggle span { display: block; width: 22px; height: 2px; border-radius: 2px; background: currentColor; transition: transform .3s cubic-bezier(.2,.7,.2,1), opacity .2s ease; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.2,.7,.2,1); }
+  .mobile-menu.open { grid-template-rows: 1fr; }
+  .mobile-menu-inner { overflow: hidden; }
+  .mobile-menu:not(.open) .mobile-menu-inner { visibility: hidden; transition: visibility 0s .35s; }
+  .mobile-nav { display: flex; flex-direction: column; padding-top: 4px; padding-bottom: 20px; }
+  .mobile-nav a:not(.btn) { display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 18px; font-weight: 600; text-decoration: none; }
+  .mobile-nav a.active:not(.btn) { color: var(--accent); }
+  .mobile-nav .btn { margin-top: 18px; }
+  .mobile-menu.open .mobile-nav > * { animation: rise-sm .4s cubic-bezier(.2,.7,.2,1) backwards; }
+  .mobile-menu.open .mobile-nav > :nth-child(2) { animation-delay: .04s; }
+  .mobile-menu.open .mobile-nav > :nth-child(3) { animation-delay: .08s; }
+  .mobile-menu.open .mobile-nav > :nth-child(4) { animation-delay: .12s; }
+  .mobile-menu.open .mobile-nav > :nth-child(5) { animation-delay: .16s; }
+  .mobile-menu.open .mobile-nav > :nth-child(6) { animation-delay: .2s; }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  body { font-size: 16.5px; }
+  .wrap { padding: 0 20px; }
+  .hero { padding: 36px 0 64px; }
+  .hero .lede { font-size: 17px; }
+  .actions { flex-direction: column; }
+  .actions .btn, .contact-links .btn { width: 100%; min-height: 50px; }
+  .hero-links a { display: inline-block; padding: 8px 0; }
+  .section { padding: 64px 0; }
+  .section h2 { margin-bottom: 30px; }
+  .job .what { padding-bottom: 40px; padding-left: 26px; }
+  .job .when { padding-left: 26px; }
+  .featured { padding: 22px 20px; border-radius: 18px; margin-bottom: 44px; }
+  .featured:hover, .project-grid .project:hover { transform: none; }
+  .entry { flex-direction: column; gap: 4px; }
+  .entry .year { padding-top: 0; }
+  .contact { padding: 72px 0 84px; }
+  .contact p { font-size: 17px; }
+  .contact-links { flex-direction: column; }
+  .to-top { right: 16px; width: 44px; height: 44px; }
+}
+
+/* ---------- In-app browser sheet ---------- */
+.sheet-backdrop { position: fixed; inset: 0; z-index: 30; background: rgba(8, 14, 26, .5); opacity: 0; transition: opacity .25s ease; }
+.sheet-backdrop.show { opacity: 1; }
+.sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 31;
+  max-width: 560px; margin: 0 auto;
+  padding: 26px 22px calc(24px + env(safe-area-inset-bottom, 0px));
+  border-radius: 22px 22px 0 0; background: var(--surface); color: var(--ink);
+  box-shadow: 0 -20px 50px -20px rgba(8, 14, 26, .5);
+  transform: translateY(100%); transition: transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.sheet.show { transform: none; }
+.sheet h2 { margin: 0 40px 10px 0; font-size: 22px; line-height: 1.25; letter-spacing: -0.015em; font-weight: 800; }
+.sheet p { margin: 0 0 10px; color: var(--muted); font-size: 16px; }
+.sheet .sheet-tip { font-size: 15px; }
+.sheet-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+.sheet-actions .btn { width: 100%; min-height: 50px; }
+.sheet-close { position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; background: var(--bg); color: var(--ink); cursor: pointer; }
+.sheet-close svg { width: 18px; height: 18px; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .code-card, .code-wrap { animation: none !important; transform: none !important; }
   .to-top { transition: opacity .2s ease; transform: none; }
+  .sheet, .sheet-backdrop, .mobile-menu, .menu-toggle span { transition: none; }
+  .mobile-menu.open .mobile-nav > * { animation: none; }
   .caret { animation: none; }
 }
 @media print {
@@ -427,7 +505,20 @@ footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted)
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-small" href="Yagnesh_Hadiya_Resume.pdf" download>Download resume</a>
+    <a class="btn btn-small header-resume" href="Yagnesh_Hadiya_Resume.pdf" download="Yagnesh_Hadiya_Resume.pdf" type="application/pdf" data-resume><span class="label-long">Download resume</span><span class="label-short">Resume</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav class="wrap mobile-nav" aria-label="Sections">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="Yagnesh_Hadiya_Resume.pdf" download="Yagnesh_Hadiya_Resume.pdf" type="application/pdf" data-resume>Download resume (PDF)</a>
+      </nav>
+    </div>
   </div>
   <div class="progress" aria-hidden="true"><span></span></div>
 </header>
@@ -441,7 +532,7 @@ footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted)
         <p class="lede">I build fast, scalable web applications with React.js, Next.js, Node.js, Express.js and MongoDB. Five-plus years of experience, from frontend architecture and REST APIs to testing and AWS deployments.</p>
         <p class="availability"><span class="dot" aria-hidden="true"></span>Open to office, remote and hybrid roles</p>
         <div class="actions">
-          <a class="btn" href="Yagnesh_Hadiya_Resume.pdf" download>Download resume (PDF)</a>
+          <a class="btn" href="Yagnesh_Hadiya_Resume.pdf" download="Yagnesh_Hadiya_Resume.pdf" type="application/pdf" data-resume>Download resume (PDF)</a>
           <a class="btn btn-ghost" href="mailto:yagnesh.tech1@gmail.com">Email me</a>
         </div>
         <p class="hero-links">
@@ -616,7 +707,7 @@ footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted)
       <p>Hiring for a MERN stack, React.js or Next.js role? I'm open to office, remote and hybrid positions.</p>
       <a class="email" href="mailto:yagnesh.tech1@gmail.com">yagnesh.tech1@gmail.com</a>
       <div class="contact-links">
-        <a class="btn" href="Yagnesh_Hadiya_Resume.pdf" download>Download resume (PDF)</a>
+        <a class="btn" href="Yagnesh_Hadiya_Resume.pdf" download="Yagnesh_Hadiya_Resume.pdf" type="application/pdf" data-resume>Download resume (PDF)</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/yagnesh-hadiya-43890616a/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/yagnesh-hadiya" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -630,6 +721,18 @@ footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted)
     <span>Senior MERN Stack Developer</span>
   </div>
 </footer>
+
+<div class="sheet-backdrop" hidden></div>
+<div class="sheet" id="resume-sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <button class="sheet-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <h2 id="sheet-title">Open in your browser to download</h2>
+  <p>This app's built-in browser blocks file downloads. Open the page in Chrome or Safari to save the PDF, or view the resume online now.</p>
+  <p class="sheet-tip">Tip: tap the &#8942; or &#8226;&#8226;&#8226; menu at the top and choose "Open in browser".</p>
+  <div class="sheet-actions">
+    <a class="btn" id="sheet-view" href="Yagnesh_Hadiya_Resume.pdf" target="_blank" rel="noopener">View resume online</a>
+    <button class="btn btn-ghost" id="sheet-copy" type="button">Copy page link</button>
+  </div>
+</div>
 
 <a class="to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
 
@@ -705,10 +808,13 @@ footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted)
   if ('IntersectionObserver' in window) {
     var links = {};
     document.querySelectorAll('.site-nav a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var mlinks = {};
+    document.querySelectorAll('.mobile-nav a:not(.btn)').forEach(function (a) { mlinks[a.getAttribute('href').slice(1)] = a; });
     var navIo = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === e.target.id); });
+        Object.keys(mlinks).forEach(function (k) { mlinks[k].classList.toggle('active', k === e.target.id); });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     ['experience', 'projects', 'skills', 'education', 'contact'].forEach(function (id) {
@@ -727,6 +833,74 @@ footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted)
       card.style.transform = 'perspective(1000px) rotateY(' + (x * 7).toFixed(2) + 'deg) rotateX(' + (-y * 7).toFixed(2) + 'deg)';
     });
     hero.addEventListener('mouseleave', function () { card.style.transform = ''; });
+  }
+
+
+  // Mobile menu
+  var toggle = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  function setMenu(open) {
+    if (!toggle || !menu) return;
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if ('inert' in menu) menu.inert = !open;
+  }
+  if (toggle && menu) {
+    setMenu(false);
+    toggle.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+    document.addEventListener('click', function (e) {
+      if (menu.classList.contains('open') && !e.target.closest('.site-header')) setMenu(false);
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth > 760) setMenu(false); });
+  }
+
+  // Resume download: in-app browsers (LinkedIn, Instagram, Facebook...) block downloads,
+  // so offer to view the PDF online or copy the link instead.
+  var ua = navigator.userAgent || '';
+  var inApp = /LinkedInApp|FBAN|FBAV|FB_IAB|Instagram|Line\/|Snapchat|Twitter|; wv\)/i.test(ua);
+  var pdfUrl = new URL('Yagnesh_Hadiya_Resume.pdf', window.location.href).href;
+  var sheet = document.getElementById('resume-sheet');
+  var backdrop = document.querySelector('.sheet-backdrop');
+  var viewLink = document.getElementById('sheet-view');
+  var copyBtn = document.getElementById('sheet-copy');
+  if (viewLink) viewLink.href = 'https://docs.google.com/viewer?url=' + encodeURIComponent(pdfUrl);
+  var lastFocus = null;
+  function openSheet() {
+    if (!sheet) return;
+    lastFocus = document.activeElement;
+    sheet.hidden = false; backdrop.hidden = false;
+    requestAnimationFrame(function () { requestAnimationFrame(function () {
+      sheet.classList.add('show'); backdrop.classList.add('show');
+      if (viewLink) viewLink.focus();
+    }); });
+  }
+  function closeSheet() {
+    if (!sheet || sheet.hidden) return;
+    sheet.classList.remove('show'); backdrop.classList.remove('show');
+    setTimeout(function () { sheet.hidden = true; backdrop.hidden = true; }, 360);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-resume]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (inApp) { e.preventDefault(); setMenu(false); openSheet(); }
+    });
+  });
+  if (sheet) {
+    sheet.querySelector('.sheet-close').addEventListener('click', closeSheet);
+    backdrop.addEventListener('click', closeSheet);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSheet(); });
+  }
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var link = window.location.href.split('#')[0];
+      var done = function () { copyBtn.textContent = 'Link copied'; setTimeout(function () { copyBtn.textContent = 'Copy page link'; }, 2200); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(done, function () { window.prompt('Copy this link:', link); });
+      } else { window.prompt('Copy this link:', link); }
+    });
   }
 
   var yr = document.getElementById('year');
